@@ -1,0 +1,15 @@
+body {
+    padding: 15px;
+    margin: 0;
+    font-family: "Courier New", Courier, monospace;
+}
+
+ul.products {
+    list-style: none;
+}
+
+.products-header {
+    font-weight: bold;
+    font-size : 15px;
+    margin-top: 30px;
+}
