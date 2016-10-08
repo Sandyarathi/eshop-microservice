@@ -33,19 +33,19 @@ $(function () {
      $('.product-details').append(
          "<div class='row'>" +
              "<label class='col-sm-3 form-label meeting-name'>Product Name: </label>" +
-             "<label class='col-sm-3 value-label'>" + productDetails.productName + "</label>" +
+             "<label class='col-sm-3 value-label'>" + productDetails.productBasicInfo.productName + "</label>" +
          "</div>" +
          "<div class='row'>" +
              "<label class='col-sm-3 form-label meeting-name'>Product Price: </label>" +
-             "<label class='col-sm-3 value-label'>" + productDetails.productPrice + "</label>" +
+             "<label class='col-sm-3 value-label'>" + productDetails.productBasicInfo.productPrice + "</label>" +
          "</div>" +
          "<div class='row'>" +
              "<label class='col-sm-3 form-label meeting-name'>Product Description: </label>" +
-             "<label class='col-sm-3 value-label'>" + productDetails.description + "</label>" +
+             "<label class='col-sm-3 value-label'>" + productDetails.productBasicInfo.description + "</label>" +
          "</div>" +
          "<div class='row'>" +
              "<label class='col-sm-3 form-label meeting-name'>Product Category: </label>" +
-             "<label class='col-sm-3 value-label'>" + productDetails.category + "</label>" +
+             "<label class='col-sm-3 value-label'>" + productDetails.productBasicInfo.category + "</label>" +
          "</div>" +
          "<div class='row'>" +
              "<label class='col-sm-3 form-label meeting-name'>Product Rating: </label>" +
