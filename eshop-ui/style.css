@@ -2,14 +2,31 @@ body {
     padding: 15px;
     margin: 0;
     font-family: "Courier New", Courier, monospace;
+	background: url("cart.png") no-repeat;	
+	background-position:center;
+	background-attachment:fixed;
 }
-
+.page-title{
+	font-size: 50px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	 	
+}
+h3:after
+{
+    content:' ';
+    display:block;
+    border:2px solid skyblue ;
+	margin-bottom:30px;
+	margin-top
+}
 ul.products {
     list-style: none;
+	
 }
 
 .products-header {
     font-weight: bold;
-    font-size : 15px;
+    font-size : 20px;
     margin-top: 30px;
 }
