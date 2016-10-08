@@ -59,6 +59,10 @@ public class Product {
 				+ ", productPrice=" + productPrice + ", description="
 				+ description + ", category=" + category + "]";
 	}
+	public Product() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 	

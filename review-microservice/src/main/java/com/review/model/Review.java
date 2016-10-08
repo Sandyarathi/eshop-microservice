@@ -5,7 +5,10 @@ import java.util.UUID;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 
-@Document(collection="Review")
+import javax.persistence.Entity;
+import javax.persistence.Table;
+@Entity
+@Table(name = "review")
 public class Review {
 	
 	private UUID productId;

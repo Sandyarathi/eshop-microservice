@@ -8,14 +8,10 @@ import org.springframework.stereotype.Service;
 
 import com.product.model.Product;
 
-
-
-
-
 @Service
 public interface IProductDetailsRepository extends MongoRepository<Product, UUID> {
 
-	public Product findById(String id);
+	public Product findById(UUID id);
 
 	public List<Product> findAll();
 
