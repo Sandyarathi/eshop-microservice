@@ -3,26 +3,27 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-			eShop Product Details
+			eShop Home Page
 		</title>
 		<link href="style.css" rel="stylesheet" type="text/css">
 	</head>
 	<body>
 		<div id="background">
-			<h3 class="page-title">Product Details</h3>
-			<div class="bg-info product-details"></div>
+		<h3 class="page-title">Products</h3>
+		<ul class="products">
+			<li class="row products-header">
+				<div class='col-sm-3'>Name</div>
+				<div class='col-sm-3'>Price</div>
+				<div class='col-sm-3'>Description</div>
+				<div class='col-sm-3'>Category</div>
+			</li>
+		</ul>
 		</div>
-		<div class="form-actions">
-			  <center>
-	       			<button type="button" onclick="placeOrder()" class="btn btn-primary">Order!</button>
-		       </center>
-		   </div>
-   		</div>
 	</body>
 
 	<script src="libs/jquery-3.1.0.min.js"></script>
 	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
 	<script src="libs/bootstrap/js/bootstrap.min.js"></script>
 	<script src="libs/notify.min.js"></script>
-	<script src="viewproduct.js"></script>
+	<script src="products.js"></script>
 </html>

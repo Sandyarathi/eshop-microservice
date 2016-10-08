@@ -16,7 +16,6 @@ $(function () {
          },
          'dataType': 'json'
      }).done(function(response) {
-         console.log('Meeting fetched');
          renderProductDetails(response)
      }).fail(function(response){
          switch(response.status) {
@@ -71,6 +70,16 @@ function getUrlParameter(sParam) {
             return sParameterName[1] === undefined ? true : sParameterName[1];
         }
     }
+}
+
+function placeOrder() {
+ var productID = getUrlParameter("productID");
+    if(!productID) {
+        $.notify('Product ID missing in URL', 'error');
+        return;
+    }
+	alert("Write API to place order!")
+	
 }
 
 
