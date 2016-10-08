@@ -15,14 +15,14 @@ $(function () {
 	            });
 	}
 	
-    function renderMeetings(products) {
+    function renderProducts(products) {
                $('.products > .product').remove();
                $.each(products, function(idx, product) {
                     $('.products').append("<li class='row product'>" +
-                       "<div class='col-sm-2 product-name'>" + product.productName + "</div>" +
-                       "<div class='col-sm-2'>" + product.productPrice + "</div>" +
-				   	   "<div class='col-sm-2'>" + product.description + "</div>" +
-				   	   "<div class='col-sm-2'>" + product.category + "</div>" +
+                       "<div class='col-sm-3 product-name'>" + product.productName + "</div>" +
+                       "<div class='col-sm-3'>" + product.productPrice + "</div>" +
+				   	   "<div class='col-sm-3'>" + product.description + "</div>" +
+				   	   "<div class='col-sm-3'>" + product.category + "</div>" +
                        "</li>");
                 });
      }
