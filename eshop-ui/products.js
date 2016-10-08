@@ -3,7 +3,7 @@ $(function () {
 	
 	function fetchProducts(firstTime) {
 	     $.ajax({
-	                url: "/product-service/api/v1/products",
+	                url: "http://localhost:8086/gateway/product/all",
 	                type: "GET",
 	                'dataType': 'json',
 	            }).done(function(response) {
@@ -21,6 +21,8 @@ $(function () {
                     $('.products').append("<li class='row product'>" +
                        "<div class='col-sm-2 product-name'>" + product.productName + "</div>" +
                        "<div class='col-sm-2'>" + product.productPrice + "</div>" +
+				   	   "<div class='col-sm-2'>" + product.description + "</div>" +
+				   	   "<div class='col-sm-2'>" + product.category + "</div>" +
                        "</li>");
                 });
      }
