@@ -25,6 +25,19 @@ repositories {
 	mavenCentral()
 }
 
+apply plugin: 'docker'
+
+task buildDocker(type: Docker, dependsOn: build) {
+  push = true
+  applicationName = jar.baseName
+  dockerfile = file('src/main/docker/Dockerfile')
+  doFirst {
+    copy {
+      from jar
+      into stageDir
+    }
+  }
+
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-amqp')

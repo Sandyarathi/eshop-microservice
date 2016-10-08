@@ -38,6 +38,8 @@ dependencies {
 	
 }
 
+apply plugin: 'docker'
+
 task buildDocker(type: Docker, dependsOn: build) {
   push = true
   applicationName = jar.baseName
@@ -48,7 +50,7 @@ task buildDocker(type: Docker, dependsOn: build) {
       into stageDir
     }
   }
-}
+
 
 
 
