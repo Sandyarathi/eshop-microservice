@@ -1,5 +1,0 @@
-com/product/controllers/ProductController.class
-com/product/repositories/IProductDetailsRepository.class
-com/product/services/ProductService.class
-com/product/ProductMicroserviceApplication.class
-com/product/model/Product.class
