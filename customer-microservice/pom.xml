@@ -5,7 +5,7 @@
 
 	<groupId>com.sjsu.cmpe282</groupId>
 	<artifactId>customer</artifactId>
-	<version>0.0.1</version>
+	<version>1.0</version>
 	<packaging>jar</packaging>
 
 	<name>customer-microservice</name>

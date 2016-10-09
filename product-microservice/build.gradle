@@ -17,8 +17,8 @@ apply plugin: 'spring-boot'
 apply plugin: 'docker'
 
 jar {
-	baseName = 'product-microservice'
-	version = '0.0.1'
+	baseName = 'product'
+	version = ''
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -49,6 +49,7 @@ task buildDocker(type: Docker, dependsOn: build) {
       from jar
       into stageDir
     }
+  }
   }
 
 
