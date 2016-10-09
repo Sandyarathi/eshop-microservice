@@ -34,12 +34,12 @@ public class ProductService {
 	}
 
 	public ArrayList<Product> listAll() throws JSONException {
-		if(addProducts()){
+		//if(addProducts()){
 			System.out.println("returning product list");
 			return (ArrayList<Product>) productDetailsRepo.findAll();
-		}
+		//}
 			
-		return null;
+		//return null;
 		
 	/*if(addProducts()){
 		List<Product> productList = productDetailsRepo.findAll();
