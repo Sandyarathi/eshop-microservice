@@ -24,10 +24,15 @@ import com.gateway.model.ViewProduct;
 @Service
 public class GatewayService {
 
-	final String productURI = "http://localhost:8081/product/";
+	/*final String productURI = "http://localhost:8081/product/";
 	final String customerURI = "http://localhost:8080/customer/";
 	final String reviewURI = "http://localhost:8085/review/";
-	final String inventoryURI = "http://localhost:8084/inventory/";
+	final String inventoryURI = "http://localhost:8084/inventory/";*/
+	
+	final String productURI = "http://ec2-52-53-210-60.us-west-1.compute.amazonaws.com:8081/product/";
+	final String customerURI = "http://ec2-54-67-124-28.us-west-1.compute.amazonaws.com:8080/customer/";
+	final String reviewURI = "http://ec2-54-183-121-141.us-west-1.compute.amazonaws.com:8085/review/";
+	final String inventoryURI = "http://ec2-54-67-113-169.us-west-1.compute.amazonaws.com:8084/inventory/";
 
 	RestTemplate restTemplate = new RestTemplate();
 
