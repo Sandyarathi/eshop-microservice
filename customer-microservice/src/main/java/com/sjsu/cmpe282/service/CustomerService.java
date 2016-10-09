@@ -29,7 +29,7 @@ public class CustomerService implements ICustomerService {
 		if (!isValidCreateUserRequest(customer)) {
 			throw new ServiceException("Invalid create user request.");
 		}
-		sendEmail(customer.getEmail());
+		//sendEmail(customer.getEmail());
 		return iCustomerRepository.createCustomer(customer);
 	}
 
