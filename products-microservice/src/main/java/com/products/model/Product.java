@@ -8,13 +8,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection="product")
 public class Product {
 	@Id
-	private UUID id;
+	private String id;
 	private String productName;
 	private Double productPrice;
 	private String description;
 	private String category;
 
-	public Product(UUID id, String productName, Double productPrice,
+	public Product(String id, String productName, Double productPrice,
 			String description, String category) {
 		super();
 		this.id = id;
@@ -23,10 +23,10 @@ public class Product {
 		this.description = description;
 		this.category = category;
 	}
-	public UUID getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(UUID id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getProductName() {

@@ -32,10 +32,17 @@ public class InventoryController {
 		return new ResponseEntity<Inventory>(inventoryService.getInventory(productId),HttpStatus.OK);
 	}
 	
-	@RequestMapping(value = "/create", method = RequestMethod.POST, produces = "application/json", consumes ="application/json")
+	@RequestMapping(value = "/create", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE, consumes =MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.CREATED)
 	public ResponseEntity<Inventory> createInventory(@RequestBody  Inventory inventory) {
 		return new ResponseEntity<Inventory>(inventoryService.createInventory(inventory),HttpStatus.CREATED);
+	}
+	
+	@RequestMapping(value = "/", method = RequestMethod.DELETE)
+	@ResponseStatus(HttpStatus.OK)
+	public ResponseEntity<Inventory> deleteAllInventory() {
+		inventoryService.deleteAllInventory();
+		return new ResponseEntity<Inventory>(HttpStatus.OK);
 	}
 	
 	

@@ -36,10 +36,21 @@ public class ProductController {
 	
 	@RequestMapping(value = "/{productId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
-	public ResponseEntity<Product> getProductInfo(@PathVariable("productId") UUID productId) {
+	public ResponseEntity<Product> getProductInfo(@PathVariable("productId") String productId) {
 		System.out.println("In ProductController");
 		return new ResponseEntity<Product>(productService.getProductInfo(productId),HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/addProducts", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(HttpStatus.OK)
+	public ResponseEntity<Product> getProductInfo() {
+		System.out.println("In ProductController");
+		if(productService.addProducts())
+			return new ResponseEntity<Product>(HttpStatus.OK);
+		return new ResponseEntity<Product>(HttpStatus.METHOD_FAILURE);
+	}
+	
+	
 
 
 

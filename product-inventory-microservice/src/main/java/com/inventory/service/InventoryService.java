@@ -23,4 +23,10 @@ public class InventoryService {
 		return inventoryRepo.save(inventory);
 	}
 
+
+	public void deleteAllInventory() {
+		// TODO Auto-generated method stub
+		inventoryRepo.deleteAll();
+	}
+
 }

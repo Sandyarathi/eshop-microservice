@@ -9,9 +9,9 @@ import org.springframework.stereotype.Service;
 import com.products.model.Product;
 
 @Service
-public interface IProductDetailsRepository extends MongoRepository<Product, UUID> {
+public interface IProductDetailsRepository extends MongoRepository<Product, String> {
 
-	public Product findById(UUID id);
+	public Product findById(String id);
 
 	public List<Product> findAll();
 
