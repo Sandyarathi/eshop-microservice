@@ -53,12 +53,13 @@ public class CustomerService implements ICustomerService {
 
 	
 	@Override
-	public boolean authenticateUser(Customer customer) {
+	public boolean authenticateCustomer(Customer customer) {
+		System.out.println("**In authenticate service class!");
 		boolean isAuthenticated = false;
 		if (customer != null) {
-			if (!StringUtils.isEmpty(customer.getCustomerId())
+			if (!StringUtils.isEmpty(customer.getEmail())
 					&& !StringUtils.isEmpty(customer.getPassword())) {
-				isAuthenticated = iCustomerRepository.authenticateUser(customer);
+				isAuthenticated = iCustomerRepository.authenticateCustomer(customer);
 			}
 		}
 

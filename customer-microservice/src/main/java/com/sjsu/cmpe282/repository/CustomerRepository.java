@@ -23,22 +23,29 @@ public class CustomerRepository implements ICustomerRepository {
 	}
 
 	@Override
-	public boolean authenticateUser(Customer customer) {
+	public boolean authenticateCustomer(Customer customer) {
 		boolean isAuthenticated = false;
 		String email = customer.getEmail();
 		String password = customer.getPassword();
-
+		System.out.println("EMAIL"+email);
+		System.out.println("PASSWORD"+password);
 		String cql = "select * from customer where email = '" + email
 				+ "' allow filtering";
 		Customer dbCustomer = operations.selectOne(cql, Customer.class);
-
+		if(dbCustomer==null){
+			System.out.println("****NO RECORD FOUND!!******");
+		}
 		System.out.println(">>>> DB password: " + dbCustomer.getPassword()
 				+ ", User password: " + password);
 
 		if (dbCustomer != null && password.equals(dbCustomer.getPassword())) {
 			isAuthenticated = true;
+			System.out.println("**IS AUTH IS TRUE"+isAuthenticated);
 		}
-
+		else{
+			System.out.println("**IS AUTH IS FALSE"+isAuthenticated);
+		}
+		System.out.println("**IS AUTH IS FALSE"+isAuthenticated);
 		return isAuthenticated;
 	}
 

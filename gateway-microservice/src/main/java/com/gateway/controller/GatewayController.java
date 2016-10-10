@@ -53,10 +53,12 @@ public class GatewayController {
 	}
 
 	@RequestMapping(value = "/customer/auth", method = RequestMethod.POST, produces = "application/json", consumes ="application/json")
-	@ResponseStatus(HttpStatus.OK)
-	public boolean login(@RequestBody Customer customer) {
-		System.out.println("In controller");
-		return gatewayService.authenticateUser(customer);
+	public HttpStatus login(@RequestBody Customer customer) {
+		if(gatewayService.authenticateUser(customer))
+			return HttpStatus.OK;
+		else
+			return HttpStatus.UNAUTHORIZED;
+
 	}
 
 

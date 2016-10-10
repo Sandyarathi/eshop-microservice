@@ -11,6 +11,7 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -82,9 +83,10 @@ public class GatewayService {
 
 	public boolean authenticateUser(Customer customer) {
 		RestTemplate restTemplate = new RestTemplate();
-		String success = restTemplate.postForObject(customerURI + "auth", customer, String.class);
-		System.out.println("Response: " + success);
-		return true;
+		HttpEntity<Customer> entity = new HttpEntity<Customer>(customer);
+		ResponseEntity<String> response =restTemplate.exchange(customerURI + "auth",HttpMethod.POST, entity, String.class);
+		System.out.println("Response: " + response.getStatusCodeValue());
+		return response.equals("OK");
 	}
 
 }

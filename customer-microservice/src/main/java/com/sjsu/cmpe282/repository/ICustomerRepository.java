@@ -7,7 +7,7 @@ public interface ICustomerRepository {
 
 	public Customer createCustomer(Customer customer);
 
-	public boolean authenticateUser(Customer customer);
+	public boolean authenticateCustomer(Customer customer);
 	
 
 }
