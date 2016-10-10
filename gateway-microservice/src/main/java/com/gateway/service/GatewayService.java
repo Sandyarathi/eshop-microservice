@@ -84,9 +84,14 @@ public class GatewayService {
 	public boolean authenticateUser(Customer customer) {
 		RestTemplate restTemplate = new RestTemplate();
 		HttpEntity<Customer> entity = new HttpEntity<Customer>(customer);
-		ResponseEntity<String> response =restTemplate.exchange(customerURI + "auth",HttpMethod.POST, entity, String.class);
-		System.out.println("Response: " + response.getStatusCodeValue());
-		return response.equals("OK");
+		try {
+			ResponseEntity<String> response =restTemplate.exchange(customerURI + "auth",HttpMethod.POST, entity, String.class);
+			System.out.println("Response: " + response.getStatusCodeValue());
+		}
+		catch(Exception e) {
+			return false;
+		}
+		return true;
 	}
 
 }

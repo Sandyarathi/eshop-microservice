@@ -53,11 +53,16 @@ public class GatewayController {
 	}
 
 	@RequestMapping(value = "/customer/auth", method = RequestMethod.POST, produces = "application/json", consumes ="application/json")
-	public HttpStatus login(@RequestBody Customer customer) {
-		if(gatewayService.authenticateUser(customer))
-			return HttpStatus.OK;
-		else
-			return HttpStatus.UNAUTHORIZED;
+	public ResponseEntity<String> login(@RequestBody Customer customer) {
+		boolean success = gatewayService.authenticateUser(customer);
+		if(success) {
+			ResponseEntity<String> entity = new ResponseEntity<String>(HttpStatus.OK);
+			return entity;
+		}
+		else {
+			ResponseEntity<String> entity = new ResponseEntity<String>(HttpStatus.UNAUTHORIZED);
+			return entity;
+		}
 
 	}
 
