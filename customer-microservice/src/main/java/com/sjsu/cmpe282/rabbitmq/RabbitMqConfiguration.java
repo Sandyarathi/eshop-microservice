@@ -15,7 +15,7 @@ public class RabbitMqConfiguration
     @Bean
     public ConnectionFactory connectionFactory()
     {
-        CachingConnectionFactory connectionFactory = new CachingConnectionFactory("localhost");
+        CachingConnectionFactory connectionFactory = new CachingConnectionFactory("ec2-54-153-26-29.us-west-1.compute.amazonaws.com");
         //connectionFactory.setUsername("user");
         //connectionFactory.setPassword("password");
         return connectionFactory;
