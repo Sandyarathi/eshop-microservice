@@ -2,7 +2,7 @@ body {
     padding: 15px;
     margin: 0;
     font-family: "Courier New", Courier, monospace;
-	
+
 }
 
 div#background {
@@ -12,12 +12,12 @@ div#background {
     left: 0;
     top: 0;
     z-index: 10;
-	background: url("cart.png") no-repeat;	
+	background: url("cart.png") no-repeat;
 	background-position:bottom;
 	background-attachment:fixed;
 	background-color:black;
 	color:lightblue;
-	
+
 }
 
 p {
@@ -27,7 +27,7 @@ p {
 	font-size: 50px;
 	margin-top: 30px;
 	margin-bottom: 30px;
-	 	
+
 }
 h3:after
 {
@@ -39,7 +39,7 @@ h3:after
 }
 ul.products {
     list-style: none;
-	
+
 }
 
 .products-header {
@@ -48,6 +48,11 @@ ul.products {
     margin-top: 30px;
 }
 
+.product-details {
+  background-color:black;
+  color:black;
+  margin-left: 20px;
+}
 .form-actions {
     margin: 0;
     background-color: transparent;

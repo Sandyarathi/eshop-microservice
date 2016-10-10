@@ -29,33 +29,36 @@ import com.gateway.service.GatewayService;
 @RequestMapping("/gateway")
 @CrossOrigin
 public class GatewayController {
-	
+
 	@Autowired
 	GatewayService gatewayService;
 
 	@RequestMapping(value = "/product/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	public ResponseEntity<ViewProduct> getProductInfo(@PathVariable("id") UUID productId) {
-		System.out.println("In GatewayController");
 		return new ResponseEntity<ViewProduct>(gatewayService.getProductInfo(productId),HttpStatus.OK);
 	}
-	
+
 	@RequestMapping(value = "/product/all", method = RequestMethod.GET, produces = "application/json")
 	@ResponseStatus(HttpStatus.OK)
 	public List<Product> getCatalog() {
-		System.out.println("In GatewayController");
 		ResponseEntity<List<Product>> responseEntity= gatewayService.getCatalog();
 		return responseEntity.getBody();
 	}
-	
+
 	@RequestMapping(value = "/customer/create", method = RequestMethod.POST, produces = "application/json", consumes ="application/json")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Customer createCustomer(@RequestBody Customer customer) {
-		System.out.println("Reached the controller!!");
 		return gatewayService.createCustomer(customer);
 	}
-	
-	
+
+	@RequestMapping(value = "/customer/auth", method = RequestMethod.POST, produces = "application/json", consumes ="application/json")
+	@ResponseStatus(HttpStatus.OK)
+	public boolean login(@RequestBody Customer customer) {
+		System.out.println("In controller");
+		return gatewayService.authenticateUser(customer);
+	}
+
 
 
 }

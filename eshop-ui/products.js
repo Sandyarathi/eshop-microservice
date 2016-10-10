@@ -1,9 +1,9 @@
 $(function () {
-    "use strict";	
-	
+    "use strict";
+
 	function fetchProducts(firstTime) {
 	     $.ajax({
-	                url: "http://localhost:8086/gateway/product/all",
+	                url: "http://ec2-52-53-167-111.us-west-1.compute.amazonaws.com:8086/gateway/product/all",
 	                type: "GET",
 	                'dataType': 'json',
 	            }).done(function(response) {
@@ -14,7 +14,7 @@ $(function () {
 	                $('.products > .product').remove();
 	            });
 	}
-	
+
     function renderProducts(products) {
                $('.products > .product').remove();
                $.each(products, function(idx, product) {
@@ -26,7 +26,6 @@ $(function () {
                        "</li>");
                 });
      }
-	   
+
 	fetchProducts(true);
 });
-		

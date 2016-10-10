@@ -1,10 +1,10 @@
 $(function () {
-    "use strict";	
+    "use strict";
 
     $("#registration-form").on('submit', function (event) {
         event.preventDefault();
         $.ajax({
-            url: "http://localhost:8086/gateway/customer/create",
+            url: "http://ec2-52-53-167-111.us-west-1.compute.amazonaws.com:8086/gateway/customer/create",
             type: "POST",
             headers: {
                 'Accept': 'application/json',

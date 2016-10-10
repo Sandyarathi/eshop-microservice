@@ -10,7 +10,7 @@ import com.sjsu.cmpe282.model.Customer;
 
 @Repository
 public class CustomerRepository implements ICustomerRepository {
-	
+
 	@Autowired
 	private CassandraOperations operations;
 
@@ -19,16 +19,16 @@ public class CustomerRepository implements ICustomerRepository {
 		Customer createdCustomer = operations.insert(customer);
 		createdCustomer.setPassword("********");
 		return createdCustomer;
-	
+
 	}
-	
+
 	@Override
 	public boolean authenticateUser(Customer customer) {
 		boolean isAuthenticated = false;
-		UUID customerId = customer.getCustomerId();
+		String email = customer.getEmail();
 		String password = customer.getPassword();
 
-		String cql = "select * from user where user_id = '" + customerId
+		String cql = "select * from user where email = '" + email
 				+ "' allow filtering";
 		Customer dbCustomer = operations.selectOne(cql, Customer.class);
 

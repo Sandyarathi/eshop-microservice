@@ -1,10 +1,10 @@
-$(function () {
-    "use strict";	
+$(function() {
+    "use strict";
 
-    $("#login-form").on('submit', function (event) {
+    $("#login-form").on('submit', function(event) {
         event.preventDefault();
         $.ajax({
-            url: "http://localhost:8086/gateway/customer/create",
+            url: "http://ec2-54-67-124-28.us-west-1.compute.amazonaws.com:8080/customer/auth",
             type: "POST",
             headers: {
                 'Accept': 'application/json',
@@ -16,9 +16,9 @@ $(function () {
                 password: $('#password').val()
             })
         }).done(function(response) {
-			window.location.href="homepage.html";
-        }).fail(function(response){
-            switch(response.status) {
+            window.location.href = "homepage.html";
+        }).fail(function(response) {
+            switch (response.status) {
                 case 400:
                     $.notify('Bad Request. Missing required fields', 'error');
                     break;

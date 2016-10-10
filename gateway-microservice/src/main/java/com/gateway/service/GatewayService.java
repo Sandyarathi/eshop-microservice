@@ -28,7 +28,7 @@ public class GatewayService {
 	final String customerURI = "http://localhost:8080/customer/";
 	final String reviewURI = "http://localhost:8085/review/";
 	final String inventoryURI = "http://localhost:8084/inventory/";*/
-	
+
 	final String productURI = "http://ec2-52-53-210-60.us-west-1.compute.amazonaws.com:8081/product/";
 	final String customerURI = "http://ec2-54-67-124-28.us-west-1.compute.amazonaws.com:8080/customer/";
 	final String reviewURI = "http://ec2-54-183-121-141.us-west-1.compute.amazonaws.com:8085/review/";
@@ -57,16 +57,16 @@ public class GatewayService {
 				new ParameterizedTypeReference<List<Product>>() {
 		});
 		List<Product> productList = responseList.getBody();*/
-		
+
 		HttpHeaders headers = new HttpHeaders();
 	    headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 	    HttpEntity<String> entity = new HttpEntity<String>("parameters", headers);
-		
+
 	    /*ResponseEntity<Product[]> response = restTemplate.exchange(
 				productURI + "list",HttpMethod.GET,entity, Product[].class);
-				 
+
 				 return (ArrayList<Product>) Arrays.asList(response.getBody());*/
-		
+
 		ParameterizedTypeReference<List<Product>> myProducts = new ParameterizedTypeReference<List<Product>>() {};
 		ResponseEntity<List<Product>> response = restTemplate.exchange(productURI + "list",HttpMethod.GET, entity, myProducts);
 		System.out.println("*****Response****"+response);
@@ -78,6 +78,13 @@ public class GatewayService {
 		RestTemplate restTemplate = new RestTemplate();
 		Customer createdCustomer = restTemplate.postForObject(customerURI + "create", customer, Customer.class);
 		return createdCustomer;
+	}
+
+	public boolean authenticateUser(Customer customer) {
+		RestTemplate restTemplate = new RestTemplate();
+		String success = restTemplate.postForObject(customerURI + "auth", customer, String.class);
+		System.out.println("Response: " + success);
+		return true;
 	}
 
 }

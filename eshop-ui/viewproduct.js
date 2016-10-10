@@ -8,7 +8,7 @@ $(function () {
          return;
      }
      $.ajax({
-         url: "http://localhost:8086/gateway/product/" + productID,
+         url: "http://ec2-52-53-167-111.us-west-1.compute.amazonaws.com:8086/gateway/product/" + productID,
          type: "GET",
          headers: {
              'Accept': 'application/json',
@@ -27,7 +27,7 @@ $(function () {
          }
      });
  }
- 
+
  function renderProductDetails(productDetails) {
      $('.product-details').append(
          "<div class='row'>" +
@@ -56,7 +56,7 @@ $(function () {
          "</div>"
      );
  }
- 
+
 function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
             sURLVariables = sPageURL.split('&'),
@@ -79,7 +79,7 @@ function placeOrder() {
         return;
     }
 	alert("Write API to place order!")
-	
+
 }
 
 
