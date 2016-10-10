@@ -72,16 +72,5 @@ function getUrlParameter(sParam) {
     }
 }
 
-function placeOrder() {
- var productID = getUrlParameter("productID");
-    if(!productID) {
-        $.notify('Product ID missing in URL', 'error');
-        return;
-    }
-	alert("Write API to place order!")
-
-}
-
-
     init();
 });

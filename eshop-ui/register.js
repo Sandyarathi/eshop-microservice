@@ -18,7 +18,7 @@ $(function () {
                 password: $('#password').val()
             })
         }).done(function(response) {
-            alert("Successfully registered! You should receive an email shortly!");
+            alert("Successfully registered!");
 			window.location.href="homepage.html";
         }).fail(function(response){
             switch(response.status) {
