@@ -28,7 +28,7 @@ public class CustomerRepository implements ICustomerRepository {
 		String email = customer.getEmail();
 		String password = customer.getPassword();
 
-		String cql = "select * from user where email = '" + email
+		String cql = "select * from customer where email = '" + email
 				+ "' allow filtering";
 		Customer dbCustomer = operations.selectOne(cql, Customer.class);
 
