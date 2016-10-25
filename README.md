@@ -1,4 +1,4 @@
-##E-Shop Mvn Docker Commands:
+##E-Shop Docker Commands:
 
 * sudo apt-get install docker.io
 * sudo mvn -e package docker:build
